@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Approvals</title>
+</head>
+<body>
+
+<h2>Head Approval Dashboard</h2>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Gauge ID</th>
+        <th>Master Key</th>
+        <th>Request Type</th>
+        <th>Requested By</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for a in data %}
+    <tr>
+        <td>{{ a[0] }}</td>
+        <td>{{ a[1] }}</td>
+        <td>{{ a[2] }}</td>
+        <td>{{ a[3] }}</td>
+        <td>{{ a[4] }}</td>
+        <td>{{ a[5] }}</td>
+
+        <td>
+            <a href="/process-approval/{{ a[0] }}/APPROVE">Approve</a>
+            <a href="/process-approval/{{ a[0] }}/REJECT">Reject</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

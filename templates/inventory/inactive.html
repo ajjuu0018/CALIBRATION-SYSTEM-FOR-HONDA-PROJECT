@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inactive Inventory</title>
+</head>
+<body>
+
+<h2>Inactive Gauges</h2>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Master Key</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Color</th>
+        <th>Department</th>
+        <th>Status</th>
+    </tr>
+
+    {% for g in data %}
+    <tr>
+        <td>{{ g[0] }}</td>
+        <td>{{ g[1] }}</td>
+        <td>{{ g[2] }}</td>
+        <td>{{ g[3] }}</td>
+        <td>{{ g[4] }}</td>
+        <td>{{ g[5] }}</td>
+        <td>{{ g[6] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

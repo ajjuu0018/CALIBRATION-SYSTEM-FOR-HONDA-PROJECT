@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+
+    <div class="col-md-3">
+        <div class="card-custom">
+            <h5>Total Gauges</h5>
+            <h2>{{ total }}</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card-custom">
+            <h5>Active</h5>
+            <h2>{{ active }}</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card-custom">
+            <h5>Inactive</h5>
+            <h2>{{ inactive }}</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card-custom">
+            <h5>Approvals</h5>
+            <h2>{{ approvals }}</h2>
+        </div>
+    </div>
+
+</div>
+
+<br>
+
+<div class="card-custom">
+    <h4>Quick Actions</h4>
+
+    <a href="/mis-dashboard" class="btn btn-primary">MIS Dashboard</a>
+    <a href="/analytics" class="btn btn-success">Analytics</a>
+    <a href="/download-mis-report" class="btn btn-danger">Download PDF</a>
+
+</div>
+
+{% endblock %}

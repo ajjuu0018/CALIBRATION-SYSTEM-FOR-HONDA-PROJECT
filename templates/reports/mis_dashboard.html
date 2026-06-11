@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card-custom mb-4">
+    <h3>📊 MIS Dashboard (Executive View)</h3>
+</div>
+
+<!-- KPI CARDS -->
+<div class="row">
+
+    <div class="col-md-3">
+        <div class="card-custom">
+            <h5>Total Gauges</h5>
+            <h2>{{ total }}</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card-custom">
+            <h5>Active</h5>
+            <h2>{{ active }}</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card-custom">
+            <h5>Inactive</h5>
+            <h2>{{ inactive }}</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card-custom">
+            <h5>Pending Approvals</h5>
+            <h2>{{ pending }}</h2>
+        </div>
+    </div>
+
+</div>
+
+<br>
+
+<div class="card-custom">
+    <h5>Total Transactions</h5>
+    <h2>{{ transactions }}</h2>
+</div>
+
+{% endblock %}

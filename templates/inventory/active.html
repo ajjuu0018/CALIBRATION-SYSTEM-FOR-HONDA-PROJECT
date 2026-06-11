@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Active Inventory</title>
+</head>
+<body>
+
+<h2>Active Gauges</h2>
+<a href="/toggle-status/{{ g[0] }}">Toggle Status</a>
+<a href="/issue-gauge/{{ g[0] }}">Issue</a>
+<a href="/return-gauge/{{ g[0] }}">Return</a>
+<a href="/inspect-gauge/{{ g[0] }}">Inspect</a>
+<a href="/raise-approval/{{ g[0] }}/MISSING">Report Missing</a>
+<a href="/raise-approval/{{ g[0] }}/NON_REPAIRABLE">Non-Repairable</a>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Master Key</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Color</th>
+        <th>Department</th>
+        <th>Status</th>
+    </tr>
+
+    {% for g in data %}
+    <tr>
+        <td>{{ g[0] }}</td>
+        <td>{{ g[1] }}</td>
+        <td>{{ g[2] }}</td>
+        <td>{{ g[3] }}</td>
+        <td>{{ g[4] }}</td>
+        <td>{{ g[5] }}</td>
+        <td>{{ g[6] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

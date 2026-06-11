@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card-custom mb-4">
+    <h3>📊 Analytics Dashboard</h3>
+    <p>System overview of departments and gauges</p>
+</div>
+
+<!-- ================= CHART ================= -->
+<div class="card-custom">
+    <h4>Department Wise Gauges</h4>
+    <canvas id="deptChart"></canvas>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    var ctx = document.getElementById('deptChart');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [
+                {% for d in dept %}
+                    "{{ d[0] }}",
+                {% endfor %}
+            ],
+            datasets: [{
+                label: 'Gauges per Department',
+                data: [
+                    {% for d in dept %}
+                        {{ d[1] }},
+                    {% endfor %}
+                ],
+                backgroundColor: 'rgba(59, 130, 246, 0.7)',
+                borderRadius: 6
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    ticks: { color: "#fff" }
+                },
+                y: {
+                    ticks: { color: "#fff" }
+                }
+            }
+        }
+    });
+
+});
+</script>
+
+{% endblock %}
